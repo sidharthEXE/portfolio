@@ -52,22 +52,42 @@ const SocialIcons = () => {
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
-          <a href="https://github.com/sidharthEXE" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/sidharthEXE"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub Profile"
+          >
             <FaGithub />
           </a>
         </span>
         <span>
-          <a href="https://www.linkedin.com/in/sidharthEXE" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/sidharthEXE"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn Profile"
+          >
             <FaLinkedinIn />
           </a>
         </span>
         <span>
-          <a href="https://x.com/SIDHARTH00007" target="_blank" rel="noreferrer">
+          <a
+            href="https://x.com/SIDHARTH00007"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="X (Twitter) Profile"
+          >
             <FaXTwitter />
           </a>
         </span>
         <span>
-          <a href="https://www.instagram.com/hashtag.sid" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.instagram.com/hashtag.sid"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram Profile"
+          >
             <FaInstagram />
           </a>
         </span>
@@ -76,6 +96,7 @@ const SocialIcons = () => {
         className="resume-button"
         href="mailto:thesidharth.cse@gmail.com?subject=Resume%20Request%20-%20Sidharth%20Mohanty"
         data-cursor="disable"
+        aria-label="Request Resume"
       >
         <HoverLinks text="RESUME" />
         <span>

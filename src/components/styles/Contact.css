@@ -116,7 +116,7 @@ a.contact-social:hover {
 @media only screen and (max-width: 900px) {
   .contact-section {
     margin-top: 60px;
-    padding-bottom: 100px;
+    padding-bottom: 40px;
     width: var(--cWidth);
   }
   .contact-container {

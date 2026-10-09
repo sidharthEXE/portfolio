@@ -10,18 +10,21 @@ import {
   CylinderCollider,
   RapierRigidBody,
 } from "@react-three/rapier";
+import "./styles/TechStack.css";
 
 const textureLoader = new THREE.TextureLoader();
-const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+const techData = [
+  { name: "React", image: "/images/react2.webp", category: "Frontend" },
+  { name: "Next.js", image: "/images/next2.webp", category: "Full Stack" },
+  { name: "TypeScript", image: "/images/typescript.webp", category: "Language" },
+  { name: "JavaScript", image: "/images/javascript.webp", category: "Language" },
+  { name: "Node.js", image: "/images/node2.webp", category: "Backend" },
+  { name: "Express.js", image: "/images/express.webp", category: "Backend" },
+  { name: "MongoDB", image: "/images/mongo.webp", category: "Database" },
+  { name: "MySQL", image: "/images/mysql.webp", category: "Database" },
 ];
+
+const imageUrls = techData.map((t) => t.image);
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 20, 20);
@@ -125,6 +128,17 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
 
 const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth <= 900 : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const trigger = ScrollTrigger.create({
@@ -156,42 +170,79 @@ const TechStack = () => {
   }, []);
 
   return (
-    <div className="techstack">
+    <div className="techstack" id="techstack">
       <h2> My Techstack</h2>
 
-      <Canvas
-        frameloop={isActive ? "always" : "never"}
-        dpr={[1, Math.min(typeof window !== "undefined" ? window.devicePixelRatio : 1, 1.5)]}
-        gl={{ alpha: true, powerPreference: "high-performance", antialias: true }}
-        camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
-        onCreated={(state) => (state.gl.toneMappingExposure = 1.5)}
-        className="tech-canvas"
-      >
-        <ambientLight intensity={1.2} />
-        <spotLight
-          position={[20, 20, 25]}
-          penumbra={1}
-          angle={0.2}
-          color="white"
-        />
-        <directionalLight position={[0, 5, -4]} intensity={2} />
-        <Physics gravity={[0, 0, 0]} paused={!isActive}>
-          <Pointer isActive={isActive} />
-          {spheres.map((props, i) => (
-            <SphereGeo
-              key={i}
-              {...props}
-              material={materials[Math.floor(Math.random() * materials.length)]}
-              isActive={isActive}
-            />
+      {/* Mobile & Tablet responsive grid */}
+      <div className="tech-grid-wrapper">
+        <div className="tech-grid">
+          {techData.map((tech) => (
+            <div className="tech-card" key={tech.name}>
+              <div className="tech-icon-wrapper">
+                <img
+                  src={tech.image}
+                  alt={tech.name}
+                  className="tech-icon"
+                  loading="lazy"
+                />
+              </div>
+              <div className="tech-info">
+                <span className="tech-name">{tech.name}</span>
+                <span className="tech-category">{tech.category}</span>
+              </div>
+            </div>
           ))}
-        </Physics>
-        <Environment
-          files="/models/char_enviorment.hdr"
-          environmentIntensity={0.5}
-          environmentRotation={[0, 4, 2]}
-        />
-      </Canvas>
+        </div>
+      </div>
+
+      {/* Desktop 3D Canvas */}
+      {!isMobile && (
+        <Canvas
+          frameloop={isActive ? "always" : "never"}
+          dpr={[
+            1,
+            Math.min(
+              typeof window !== "undefined" ? window.devicePixelRatio : 1,
+              1.5
+            ),
+          ]}
+          gl={{
+            alpha: true,
+            powerPreference: "high-performance",
+            antialias: true,
+          }}
+          camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
+          onCreated={(state) => (state.gl.toneMappingExposure = 1.5)}
+          className="tech-canvas"
+        >
+          <ambientLight intensity={1.2} />
+          <spotLight
+            position={[20, 20, 25]}
+            penumbra={1}
+            angle={0.2}
+            color="white"
+          />
+          <directionalLight position={[0, 5, -4]} intensity={2} />
+          <Physics gravity={[0, 0, 0]} paused={!isActive}>
+            <Pointer isActive={isActive} />
+            {spheres.map((props, i) => (
+              <SphereGeo
+                key={i}
+                {...props}
+                material={
+                  materials[Math.floor(Math.random() * materials.length)]
+                }
+                isActive={isActive}
+              />
+            ))}
+          </Physics>
+          <Environment
+            files="/models/char_enviorment.hdr"
+            environmentIntensity={0.5}
+            environmentRotation={[0, 4, 2]}
+          />
+        </Canvas>
+      )}
     </div>
   );
 };
