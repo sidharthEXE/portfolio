@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 import MainContainer from "./components/MainContainer";
 import { LoadingProvider } from "./context/LoadingProvider";
@@ -13,6 +14,7 @@ const App = () => {
           <CharacterModel />
         </Suspense>
       </MainContainer>
+      <Analytics />
     </LoadingProvider>
   );
 };
