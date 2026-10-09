@@ -1,65 +1,166 @@
-# My Portfolio Website - Overview 🚀
+# Sidharth Mohanty — Developer Portfolio
 
-This repository contains the open-source version of my personal portfolio website.  
-Feel free to explore the code and use it for learning and inspiration.
+A modern, interactive developer portfolio built to showcase my technical skills, experience, and projects. Designed with a minimal dark aesthetic, purple accents, animated interactions, and a responsive layout for desktop and mobile devices.
+
+## Overview
+
+This portfolio serves as my personal space on the web to present my development journey, technical interests, and projects. It combines a clean interface with interactive animations to create an engaging browsing experience.
+
+## Features
+
+- **Interactive Hero Section** — Animated introduction featuring a 3D mascot and dynamic developer-role text.
+- **About Me** — Overview of my background, technical interests, and development goals.
+- **What I Do** — Highlights of my web development, data management, and technical support skills.
+- **Experience & Education** — A chronological timeline of my education, training, and professional development.
+- **Project Showcase** — Dedicated presentation of my projects, including ResQ.
+- **Responsive Design** — Adaptive layouts for desktop, tablet, and mobile screens.
+- **Scroll-Based Animations** — Interactive transitions and motion effects for an engaging browsing experience.
+- **Loading Screen** — Animated loading indicator with a percentage-based progress display.
+- **Social Links** — Quick access to my professional and developer profiles.
+- **Resume Access** — A convenient way to view or download my resume.
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React | Component-based user interface |
+| Vite | Development server and build tooling |
+| JavaScript | Interactive functionality |
+| HTML5 | Website structure |
+| CSS3 | Styling, responsive layouts, and visual effects |
+| GSAP | Animation and scroll-based interactions |
+| Git & GitHub | Version control and source code management |
+
+*The stack listed above reflects the technologies used or identified in the project. Update it if the implementation changes.*
+
+## Featured Project
+
+### ResQ — Emergency Response & Service Locator
+
+ResQ is a location-based emergency service platform designed to help users discover nearby emergency facilities.
+
+**Key functionality:**
+- Discover nearby hospitals and pharmacies.
+- Locate blood banks and ambulance services.
+- Explore emergency service categories.
+- Access location-based service information.
+
+**Technologies:** React, Node.js, Express.js, MongoDB, and Geolocation API.
+
+## Getting Started
+
+Follow these steps to run the portfolio locally.
+
+### Prerequisites
+
+Make sure you have installed:
+
+- [Node.js](https://nodejs.org/)
+- npm (included with Node.js)
+- [Git](https://git-scm.com/)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/sidharth-portfolio.git
+```
+
+Replace `YOUR_USERNAME` with your GitHub username.
+
+### 2. Navigate to the project directory
+
+```bash
+cd sidharth-portfolio
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal, usually:
+
+```text
+http://localhost:5173
+```
+
+### 5. Build for production
+
+```bash
+npm run build
+```
+
+The production-ready files will normally be generated in the `dist/` directory.
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+A typical structure for this React and Vite project looks like this:
+
+```text
+sidharth-portfolio/
+├── public/              # Static assets
+├── src/
+│   ├── assets/          # Images, models, and other assets
+│   ├── components/      # Reusable UI components
+│   ├── App.jsx          # Main application component
+│   ├── main.jsx         # Application entry point
+│   └── index.css        # Global styles
+├── index.html
+├── package.json
+├── vite.config.js
+├── .gitignore
+└── README.md
+```
+
+*This is an illustrative structure. Keep the actual filenames and folders from your repository if they differ.*
+
+## Responsive Design
+
+The portfolio is designed to adapt to different screen sizes.
+
+- Desktop: Full visual composition and interactive animations.
+- Tablet: Adjusted layouts and responsive component sizing.
+- Mobile: Stacked content, touch-friendly navigation, and optimized mascot positioning.
+
+The goal is to preserve the website's visual identity while maintaining readability and usability across devices.
+
+## Future Improvements
+
+- Further optimize 3D rendering and animation performance on mobile devices.
+- Improve accessibility and keyboard navigation.
+- Add more projects and detailed case studies.
+- Deploy the portfolio with a custom domain.
+- Continue refining performance and responsive behavior.
+
+## About Me
+
+I'm Sidharth Mohanty, a Computer Science and Engineering student at Brainware University with an interest in full-stack web development, software engineering, and cybersecurity.
+
+I enjoy building practical applications, solving technical problems, and learning new technologies through hands-on projects.
+
+## Connect With Me
+
+- **Email:** thesidharth.cse@gmail.com
+- **GitHub:** [Your GitHub Profile](https://github.com/YOUR_USERNAME)
+- **LinkedIn:** [Your LinkedIn Profile](YOUR_LINKEDIN_URL)
+
+## License
+
+This project is intended to showcase my personal portfolio and development work. If you plan to reuse or redistribute the source code, add an appropriate license specifying the permissions and restrictions.
 
 ---
 
-## ⚠️ Usage Notice
-
-This project is shared for learning purposes only.
-
-Please do NOT:
-- Clone or replicate the full website or design
-- Repost it with minor content changes
-- Use this project for commercial/client work
-- Create tutorials or content using this exact project
-
-If you use parts of the code, you must provide proper credit linking back to the original repository.
-
-Build your own version — don’t just copy.
-
-— Moncy Yohannan
-
----
-
-## 🛠️ Instructions
-
-I have modified the GSAP Club plugins using trial versions.  
-⚠️ Note: Trial plugins cannot be used for production or hosting.
-
-For official GSAP Club plugins, refer here:  
-https://gsap.com/docs/v3/Installation/
-
----
-
-## ⚙️ Tech Stack
-
-React • TypeScript • GSAP • Three.js • WebGL • HTML • CSS • JavaScript
-
----
-
-## 🎨 Assets Usage
-
-Some 3D assets included in this repository are free to use for learning purposes.
-
-However:
-
-- The original 3D avatar used on my live portfolio is NOT included in this repository
-- That avatar is a custom asset created over ~1 month
-- It is not open source and not available for reuse
-
-Any usage, extraction, or redistribution of that avatar from my live website is strictly prohibited.
-
----
-
-![Protfolio-Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
-
----
-
-## 📄 License
-
-This project is licensed under the Personal Portfolio License (PPL) v1.0.
-
-See the LICENSE file for full details
-
+**Built by Sidharth Mohanty.**
