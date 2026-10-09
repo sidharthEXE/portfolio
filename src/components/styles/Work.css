@@ -1,0 +1,456 @@
+.work-section {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  margin: 0 auto;
+  padding: 60px 0 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 5;
+}
+
+@media only screen and (min-width: 1025px) {
+  .work-section {
+    min-height: 75vh;
+    max-height: 90vh;
+    padding: 40px 0 60px 0;
+  }
+}
+
+.work-container {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Section Title & Thin Horizontal Divider */
+.work-title-wrap {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.work-title-wrap h2 {
+  font-size: calc(2.4rem + 1vw);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.work-title-wrap h2 span {
+  color: var(--accentColor, #c2a4ff);
+}
+
+.work-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-top: 24px;
+}
+
+/* Showcase Area */
+.work-showcase {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-content-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 50px;
+  align-items: center;
+  animation: workSlideIn 0.4s ease-out;
+}
+
+@keyframes workSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left Column: Project Details */
+.work-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.work-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.work-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.28);
+  line-height: 1;
+  letter-spacing: -1px;
+  user-select: none;
+}
+
+.work-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-name {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.work-category {
+  font-size: 0.98rem;
+  color: #8e8d98;
+  margin: 6px 0 0 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.work-tools-group {
+  margin-bottom: 28px;
+}
+
+.work-tools-label {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+
+.work-tools-list {
+  font-size: 0.95rem;
+  color: #cfcbdb;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 440px;
+}
+
+.work-action {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.work-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.work-live-link:hover {
+  background: rgba(194, 164, 255, 0.15);
+  border-color: var(--accentColor, #c2a4ff);
+  color: var(--accentColor, #c2a4ff);
+  transform: translateY(-2px);
+}
+
+.work-live-link svg {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.work-live-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Right Column: Project Preview */
+.work-preview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-image-in {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 660px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0d0b12;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 35px rgba(194, 164, 255, 0.05);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  text-decoration: none;
+}
+
+.work-image-in:hover {
+  transform: translateY(-4px);
+  border-color: rgba(194, 164, 255, 0.35);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.75), 0 0 45px rgba(194, 164, 255, 0.12);
+}
+
+.work-image-in img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-image-in:hover img {
+  transform: scale(1.02);
+}
+
+.work-link {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(11, 8, 12, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.work-image-in:hover .work-link {
+  opacity: 1;
+  background: var(--accentColor, #c2a4ff);
+  color: #0b080c;
+  transform: scale(1.06);
+}
+
+/* Navigation Buttons (for carousel with multiple projects) */
+.work-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.work-prev {
+  left: -55px;
+}
+
+.work-next {
+  right: -55px;
+}
+
+.work-nav-btn:hover {
+  background: rgba(194, 164, 255, 0.2);
+  border-color: var(--accentColor, #c2a4ff);
+  color: var(--accentColor, #c2a4ff);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Pagination Dots (for carousel with multiple projects) */
+.work-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.work-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.work-dot.active {
+  background: var(--accentColor, #c2a4ff);
+  transform: scale(1.25);
+  box-shadow: 0 0 10px var(--accentColor, #c2a4ff);
+}
+
+.work-dot:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Responsive Breakpoints */
+@media only screen and (max-width: 1200px) {
+  .work-content-grid {
+    gap: 36px;
+  }
+  .work-prev {
+    left: -20px;
+  }
+  .work-next {
+    right: -20px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .work-section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .work-container {
+    width: var(--cWidth);
+    max-width: 100%;
+  }
+
+  .work-content-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .work-info {
+    padding-right: 0;
+  }
+
+  .work-header {
+    margin-bottom: 20px;
+    gap: 16px;
+  }
+
+  .work-number {
+    font-size: clamp(2.4rem, 8vw, 3rem);
+  }
+
+  .work-name {
+    font-size: clamp(1.5rem, 5.5vw, 1.9rem);
+  }
+
+  .work-image-in {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .work-prev {
+    left: 0px;
+  }
+
+  .work-next {
+    right: 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .work-section {
+    padding: 50px 0;
+  }
+
+  .work-title-wrap {
+    margin-bottom: 25px;
+  }
+
+  .work-title-wrap h2 {
+    font-size: clamp(26px, 7.5vw, 34px);
+  }
+
+  .work-divider {
+    margin-top: 16px;
+  }
+
+  .work-header {
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+
+  .work-number {
+    font-size: 2.2rem;
+  }
+
+  .work-name {
+    font-size: 1.4rem;
+  }
+
+  .work-category {
+    font-size: 0.85rem;
+  }
+
+  .work-tools-group {
+    margin-bottom: 20px;
+  }
+
+  .work-tools-label {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+
+  .work-tools-list {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .work-live-link {
+    padding: 9px 20px;
+    font-size: 0.88rem;
+  }
+
+  .work-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.15rem;
+  }
+}
