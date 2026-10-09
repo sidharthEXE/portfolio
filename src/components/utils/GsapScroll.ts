@@ -15,6 +15,7 @@ export function setCharTimeline(
   ScrollTrigger.getById("char-tl1")?.kill();
   ScrollTrigger.getById("char-tl2")?.kill();
   ScrollTrigger.getById("char-tl3")?.kill();
+  ScrollTrigger.getById("char-tl-mobile")?.kill();
 
   const tl1 = gsap.timeline({
     scrollTrigger: {
@@ -204,10 +205,59 @@ export function setCharTimeline(
       tl1.progress(0);
     }
   } else {
-    gsap.set(".character-model", { clearProps: "transform" });
+    ScrollTrigger.getById("char-tl1")?.kill();
+    ScrollTrigger.getById("char-tl2")?.kill();
+    ScrollTrigger.getById("char-tl3")?.kill();
+    ScrollTrigger.getById("char-tl-mobile")?.kill();
+
     if (character) {
       character.rotation.set(0, 0, 0);
       character.position.set(0, 0, 0);
+      gsap.set(".character-model", { x: 0, y: 0, scale: 1 });
+
+      const mobileTl = gsap.timeline({
+        scrollTrigger: {
+          id: "char-tl-mobile",
+          trigger: ".landing-section",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      mobileTl
+        .to(
+          character.rotation,
+          { y: 0.38, x: 0.07, duration: 1, ease: "power1.out" },
+          0
+        )
+        .to(
+          camera.position,
+          { z: 26.2, duration: 1, ease: "power1.out" },
+          0
+        )
+        .to(
+          ".character-model",
+          { y: "-6%", scale: 0.94, duration: 1, ease: "power1.out" },
+          0
+        )
+        .to(
+          ".landing-intro",
+          { opacity: 0, y: "-35%", duration: 0.5, ease: "power2.in" },
+          0
+        )
+        .to(
+          ".landing-info",
+          { opacity: 0, y: "30%", duration: 0.5, ease: "power2.in" },
+          0
+        )
+        .to(
+          ".character-rim",
+          { opacity: 0.25, scale: 0.85, duration: 0.7 },
+          0
+        );
+
       const tM2 = gsap.timeline({
         scrollTrigger: {
           trigger: ".what-box-in",
@@ -216,6 +266,8 @@ export function setCharTimeline(
         },
       });
       tM2.to(".what-box-in", { display: "flex", duration: 0.1, delay: 0 }, 0);
+
+      mobileTl.progress(0);
     }
   }
 }

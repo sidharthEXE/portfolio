@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 import setCharacter from "./utils/character";
 import setLighting from "./utils/lighting";
 import { useLoading } from "../../context/LoadingProvider";
-import handleResize, { getResponsiveZoom } from "./utils/resizeUtils";
+import handleResize, { getResponsiveCamera } from "./utils/resizeUtils";
 import {
   handleMouseMove,
   handleTouchEnd,
@@ -51,9 +51,14 @@ const Scene = () => {
     renderer.toneMappingExposure = 1;
     containerEl.appendChild(renderer.domElement);
 
+    const camSettings = getResponsiveCamera(width, height);
     const camera = new THREE.PerspectiveCamera(14.5, aspect, 0.1, 1000);
-    camera.position.set(0, 13.1, 24.7);
-    camera.zoom = getResponsiveZoom(width, height);
+    camera.position.set(
+      camSettings.position.x,
+      camSettings.position.y,
+      camSettings.position.z
+    );
+    camera.zoom = camSettings.zoom;
     camera.updateProjectionMatrix();
 
     let headBone: THREE.Object3D | null = null;
@@ -144,7 +149,15 @@ const Scene = () => {
         const h = rect.height || window.innerHeight;
         renderer.setSize(w, h);
         camera.aspect = w / h;
-        camera.zoom = getResponsiveZoom(w, h);
+        const camSettings = getResponsiveCamera(w, h);
+        camera.zoom = camSettings.zoom;
+        if (window.innerWidth <= 1024) {
+          camera.position.set(
+            camSettings.position.x,
+            camSettings.position.y,
+            camSettings.position.z
+          );
+        }
         camera.updateProjectionMatrix();
       }
       if (charMesh) {

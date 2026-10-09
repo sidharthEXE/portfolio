@@ -16,7 +16,11 @@ export function initialFX() {
       charTl1.animation.progress(0);
     }
   } else {
-    gsap.set(".character-model", { clearProps: "transform" });
+    gsap.set(".character-model", { x: 0, y: 0, scale: 1 });
+    const mobileTl = ScrollTrigger.getById("char-tl-mobile");
+    if (mobileTl?.animation) {
+      mobileTl.animation.progress(0);
+    }
   }
   ScrollTrigger.refresh();
   const mainEl = document.getElementsByTagName("main")[0];

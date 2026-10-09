@@ -21,6 +21,7 @@
   --backgroundColor: #0b080c;
   --vh: 100vh;
   --vh: 100svh;
+  --vh: 100dvh;
 }
 h1,
 h2,
