@@ -191,10 +191,6 @@
     transform: none;
     top: 0;
   }
-  .career-dot {
-    left: 12px;
-    transform: translate(-50%, 50%);
-  }
   .career-info-box {
     flex-direction: column;
     padding-left: 36px;
@@ -246,9 +242,6 @@
     margin-bottom: 35px;
   }
   .career-timeline {
-    left: 8px;
-  }
-  .career-dot {
     left: 8px;
   }
 }
