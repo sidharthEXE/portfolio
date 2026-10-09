@@ -44,7 +44,7 @@ const Career = () => {
               <h3>2024</h3>
             </div>
             <p>
-              Currently in 4th Semester with an 8.15 CGPA. Mastering core computer science disciplines including OOP, DBMS, Computer Networks, Operating Systems, and Data Structures.
+              Currently in 5th Semester with an 8.15 CGPA(in 4th sem). Mastering core computer science disciplines including Operating Systems, OOP, DBMS, Data Structures, and Computer Networks.
             </p>
           </div>
           <div className="career-info-box">

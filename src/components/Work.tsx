@@ -104,7 +104,6 @@ const Work = () => {
             </button>
           )}
         </div>
-
         {hasMultiple && (
           <div className="work-pagination">
             {projects.map((_, i) => (

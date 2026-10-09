@@ -103,42 +103,18 @@ body {
 
 @media screen and (min-width: 901px) {
   .techstack {
-    height: var(--vh);
+    height: var(--vh, 100vh);
     margin-top: 50px;
     margin-bottom: -100px;
-  }
-
-  .techstack h2 {
-    font-size: 80px;
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    top: 120px;
-    left: 0;
-    font-weight: 400;
-    text-transform: uppercase;
   }
 }
 
 @media screen and (max-width: 900px) {
   .techstack {
-    height: auto;
-    min-height: auto;
-    margin-top: 60px;
-    margin-bottom: 40px;
-    width: var(--cWidth);
-  }
-
-  .techstack h2 {
-    position: relative;
-    top: auto;
-    left: auto;
-    font-size: clamp(32px, 7vw, 44px);
-    text-align: center;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin: 0 0 32px 0;
-    letter-spacing: -0.5px;
+    height: 100svh;
+    height: var(--vh, 100vh);
+    min-height: 560px;
+    margin: 20px auto 40px auto;
   }
 }
 
