@@ -274,19 +274,27 @@ h2.landing-info-h2 {
   top: 0;
 }
 
+/* Eliminate black square shaped glitch from opaque pseudo-element */
 .landing-info-h2::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 120%;
-  z-index: 3;
-  background-image: linear-gradient(
-    0deg,
-    var(--backgroundColor) 40%,
-    rgba(0, 0, 0, 0) 110%
-  );
-  top: 0;
-  left: 0;
+  display: none !important;
+}
+
+/* Mobile & Tablet: hide duplicate reflection and use clean single animated role title */
+@media screen and (max-width: 1024px) {
+  h2.landing-info-h2 {
+    display: none !important;
+  }
+  .landing-info > h2:not(.landing-info-h2) {
+    margin-top: 4px !important;
+  }
+}
+
+/* Desktop: use alpha mask for clean fading reflection without dark boxes */
+@media screen and (min-width: 1025px) {
+  h2.landing-info-h2 {
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.6) 100%);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.6) 100%);
+  }
 }
 
 /* Short viewports (e.g. 320x568, 375x667) */
